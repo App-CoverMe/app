@@ -1,4 +1,6 @@
+import 'package:app/authentication/bloc/authentication_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -20,6 +22,16 @@ class _HomeState extends State<Home> {
         ),
         title: Text('CoverMe'),
         centerTitle: true,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: GestureDetector(
+              onTap: () => BlocProvider.of<AuthenticationBloc>(context)
+                  .add(AuthenticationLogoutRequested()),
+              child: Icon(Icons.logout),
+            ),
+          ),
+        ],
       ),
       drawer: Drawer(),
       body: _currentTabIndex == 0
