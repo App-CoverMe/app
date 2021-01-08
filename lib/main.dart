@@ -1,10 +1,12 @@
 import 'package:app/authentication/bloc/authentication_bloc.dart';
 import 'package:app/authentication/data/authentication_repository.dart';
+import 'package:app/constants/ui_constants.dart';
 import 'package:app/home.dart';
 import 'package:app/login/bloc/login/login_bloc.dart';
-import 'package:app/login/ui/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'login/login_screen.dart';
 
 class SimpleBlocObserver extends BlocObserver {
   @override
@@ -60,7 +62,7 @@ class App extends StatelessWidget {
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listener: (context, state) {
         if (state.status != AuthenticationStatus.authenticated) {
-          _navigator.currentState.pushNamed('/login');
+          _navigator.currentState.pushNamed('/'); // should be '/login'
         }
       },
       child: MaterialApp(
@@ -68,7 +70,44 @@ class App extends StatelessWidget {
         navigatorKey: _navigator,
         title: 'CoverMe',
         theme: ThemeData(
+          fontFamily: 'Lato',
           primarySwatch: Colors.blue,
+          iconTheme: IconThemeData(color: kPrimaryTextColor),
+          textTheme: TextTheme(
+            headline5: TextStyle(
+              fontFamily: 'Lato',
+              fontSize: 22,
+              fontWeight: FontWeight.w900,
+            ),
+            headline6: TextStyle(
+              // Old name was 'Title'
+              fontFamily: 'Lato',
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+            ),
+            subtitle1: TextStyle(
+              fontFamily: 'Roboto',
+              fontSize: 14,
+              fontWeight: FontWeight.w700,
+            ),
+            bodyText1: TextStyle(
+              fontFamily: 'Roboto',
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+            ),
+          ).apply(
+            bodyColor: kPrimaryTextColor,
+            displayColor: kPrimaryTextColor,
+          ),
+          appBarTheme: AppBarTheme(
+            elevation: 0,
+            centerTitle: true,
+            color: Colors.transparent,
+            iconTheme: IconThemeData(color: kPrimaryTextColor),
+          ),
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+              selectedLabelStyle: TextStyle(fontWeight: FontWeight.w700),
+              selectedItemColor: kPrimaryTextColor),
         ),
         routes: {
           '/': (context) => Home(),
