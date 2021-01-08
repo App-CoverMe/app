@@ -12,36 +12,39 @@ class CmSectionHeader extends StatelessWidget {
       @required this.hasViewAll});
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.baseline,
-      textBaseline: TextBaseline.alphabetic,
-      children: [
-        Text(
-          headerTitle,
-          style: Theme.of(context).textTheme.headline5,
-        ),
-        hasViewAll
-            ? GestureDetector(
-                onTap: headerFunction,
-                child: Container(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'view all',
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
-                      Icon(
-                        Icons.chevron_right,
-                        size: 20,
-                      ),
-                    ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.baseline,
+        textBaseline: TextBaseline.alphabetic,
+        children: [
+          Text(
+            headerTitle,
+            style: Theme.of(context).textTheme.headline5,
+          ),
+          hasViewAll
+              ? GestureDetector(
+                  onTap: headerFunction,
+                  child: Container(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'view all',
+                          style: Theme.of(context).textTheme.bodyText1,
+                        ),
+                        Icon(
+                          Icons.chevron_right,
+                          size: 20,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              )
-            : Container(),
-      ],
+                )
+              : Container(),
+        ],
+      ),
     );
   }
 }
