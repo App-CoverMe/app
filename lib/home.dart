@@ -54,9 +54,8 @@ class _HomeState extends State<Home> {
             label: 'Explore',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            // outlined version looks 'fuller' than non-outlined version
-            activeIcon: Icon(Icons.list_outlined),
+            icon: Icon(Icons.list_alt_outlined),
+            activeIcon: Icon(Icons.list_alt),
             label: 'Feed',
           )
         ],

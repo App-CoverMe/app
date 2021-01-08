@@ -19,9 +19,15 @@ class CmSectionHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.baseline,
         textBaseline: TextBaseline.alphabetic,
         children: [
-          Text(
-            headerTitle,
-            style: Theme.of(context).textTheme.headline5,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(headerIcon),
+              Text(
+                headerTitle,
+                style: Theme.of(context).textTheme.headline5,
+              ),
+            ],
           ),
           hasViewAll
               ? GestureDetector(

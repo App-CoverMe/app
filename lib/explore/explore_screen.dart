@@ -12,7 +12,7 @@ class ExploreScreen extends StatelessWidget {
         children: [
           CmSectionHeader(
             headerTitle: 'Trending Venues',
-            headerIcon: null,
+            headerIcon: Icons.whatshot,
             headerFunction: () {
               print('View all pressed');
             },
@@ -31,7 +31,7 @@ class ExploreScreen extends StatelessWidget {
           ),
           CmSectionHeader(
             headerTitle: 'Resaurants',
-            headerIcon: null,
+            headerIcon: Icons.restaurant,
             headerFunction: () {
               print('View all pressed');
             },
@@ -50,7 +50,7 @@ class ExploreScreen extends StatelessWidget {
           ),
           CmSectionHeader(
             headerTitle: 'Bars',
-            headerIcon: null,
+            headerIcon: Icons.local_bar,
             headerFunction: () {
               print('View all pressed');
             },
@@ -69,7 +69,7 @@ class ExploreScreen extends StatelessWidget {
           ),
           CmSectionHeader(
             headerTitle: 'Clubs',
-            headerIcon: null,
+            headerIcon: Icons.music_note,
             headerFunction: () {
               print('View all pressed');
             },

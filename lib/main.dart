@@ -106,8 +106,9 @@ class App extends StatelessWidget {
             iconTheme: IconThemeData(color: kPrimaryTextColor),
           ),
           bottomNavigationBarTheme: BottomNavigationBarThemeData(
-              selectedLabelStyle: TextStyle(fontWeight: FontWeight.w700),
-              selectedItemColor: kPrimaryTextColor),
+            selectedLabelStyle: TextStyle(fontWeight: FontWeight.w700),
+            selectedItemColor: kPrimaryTextColor,
+          ),
         ),
         routes: {
           '/': (context) => Home(),

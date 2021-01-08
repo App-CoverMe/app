@@ -10,7 +10,7 @@ final List<Widget> kTrendingVenuesList = [
   ),
   CmTrendingImageText(
     venueEntryFee: 7.50,
-    venueName: 'Club Wicket',
+    venueName: 'Club Wicked',
     venueImage: AssetImage('assets/images/bar_image_1.jpg'),
   ),
   CmTrendingImageText(
@@ -43,7 +43,7 @@ final List<Widget> kResaurantList = [
   ),
   CmVenueImageText(
     venueEntryFee: 2.50,
-    venueName: 'Resaurant run dry',
+    venueName: 'Restaurant run dry',
     venueImage: AssetImage('assets/images/bar_image_1.jpg'),
   ),
 ];
