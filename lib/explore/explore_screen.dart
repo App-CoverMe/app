@@ -6,6 +6,7 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -36,6 +37,17 @@ class ExploreScreen extends StatelessWidget {
             },
             hasViewAll: true,
           ),
+          Container(
+            height: 200,
+            child: ListView.builder(
+              physics: BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemCount: kResaurantList.length,
+              itemBuilder: (context, index) {
+                return kResaurantList[index];
+              },
+            ),
+          ),
           CmSectionHeader(
             headerTitle: 'Bars',
             headerIcon: null,
@@ -44,6 +56,17 @@ class ExploreScreen extends StatelessWidget {
             },
             hasViewAll: true,
           ),
+          Container(
+            height: 200,
+            child: ListView.builder(
+              physics: BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemCount: kResaurantList.length,
+              itemBuilder: (context, index) {
+                return kResaurantList[index];
+              },
+            ),
+          ),
           CmSectionHeader(
             headerTitle: 'Clubs',
             headerIcon: null,
@@ -51,6 +74,17 @@ class ExploreScreen extends StatelessWidget {
               print('View all pressed');
             },
             hasViewAll: true,
+          ),
+          Container(
+            height: 200,
+            child: ListView.builder(
+              physics: BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemCount: kResaurantList.length,
+              itemBuilder: (context, index) {
+                return kResaurantList[index];
+              },
+            ),
           ),
         ],
       ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CmTrendingImageText extends StatelessWidget {
+class CmVenueImageText extends StatelessWidget {
   final double venueEntryFee;
   final String venueName;
   final ImageProvider venueImage;
-  CmTrendingImageText(
+  CmVenueImageText(
       {@required this.venueEntryFee,
       @required this.venueName,
       @required this.venueImage});
@@ -18,7 +18,7 @@ class CmTrendingImageText extends StatelessWidget {
         children: [
           Container(
             height: 150,
-            width: 225,
+            width: 150,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(6)),
               image: DecorationImage(
@@ -30,7 +30,7 @@ class CmTrendingImageText extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 4.0),
             child: Container(
-              width: 225,
+              width: 150,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -38,7 +38,7 @@ class CmTrendingImageText extends StatelessWidget {
                     venueName,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.subtitle1,
                   ),
                   Text(
                     '\$${venueEntryFee.toStringAsFixed(2)} entry fee',
