@@ -17,6 +17,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true, //Needed to have the app bar be transparent
       key: _rootScaffold,
       appBar: AppBar(
         leading: GestureDetector(

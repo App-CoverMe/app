@@ -108,6 +108,8 @@ class App extends StatelessWidget {
           bottomNavigationBarTheme: BottomNavigationBarThemeData(
             selectedLabelStyle: TextStyle(fontWeight: FontWeight.w700),
             selectedItemColor: kPrimaryTextColor,
+            elevation: 0,
+            backgroundColor: Colors.white.withOpacity(0.9),
           ),
         ),
         routes: {
