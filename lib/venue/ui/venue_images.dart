@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 
 class VenueImagesCarousel extends StatelessWidget {
-  final List<String> venueImages = [
-    'assets/images/bar_image_1.jpg',
-    'assets/images/bar_image_1.jpg',
-    'assets/images/bar_image_1.jpg',
-    'assets/images/bar_image_1.jpg',
-  ];
+  final List<String> venueImages;
+  VenueImagesCarousel({this.venueImages});
   @override
   Widget build(BuildContext context) {
     return Container(

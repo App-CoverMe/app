@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class VenueHeader extends StatelessWidget {
+  final String venueName;
+  VenueHeader({this.venueName});
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -30,7 +32,7 @@ class VenueHeader extends StatelessWidget {
         Positioned(
           bottom: 20,
           child: Text(
-            'Venue Name',
+            venueName,
             style: Theme.of(context).textTheme.headline5,
           ),
         ),
