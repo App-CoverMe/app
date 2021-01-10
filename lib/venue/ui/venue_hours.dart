@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../venue_screen.dart';
+
 class VenueHours extends StatelessWidget {
+  final List<OpeningTimes> openingTimes;
+
+  VenueHours({this.openingTimes});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,80 +22,15 @@ class VenueHours extends StatelessWidget {
               ),
             ],
           ),
-          SingleDayOpeningTimes(
-            openingTimes: OpeningTimes(
-                day: 'Mon',
-                openingTime: 8,
-                openingTimeAM: true,
-                closingTime: 9,
-                closingTimeAM: false),
-          ),
-          SingleDayOpeningTimes(
-            openingTimes: OpeningTimes(
-                day: 'Tue',
-                openingTime: 8,
-                openingTimeAM: true,
-                closingTime: 9,
-                closingTimeAM: false),
-          ),
-          SingleDayOpeningTimes(
-            openingTimes: OpeningTimes(
-                day: 'Wed',
-                openingTime: 8,
-                openingTimeAM: true,
-                closingTime: 9,
-                closingTimeAM: false),
-          ),
-          SingleDayOpeningTimes(
-            openingTimes: OpeningTimes(
-                day: 'Thur',
-                openingTime: 8,
-                openingTimeAM: true,
-                closingTime: 9,
-                closingTimeAM: false),
-          ),
-          SingleDayOpeningTimes(
-            openingTimes: OpeningTimes(
-                day: 'Fri',
-                openingTime: 8,
-                openingTimeAM: true,
-                closingTime: 11,
-                closingTimeAM: false),
-          ),
-          SingleDayOpeningTimes(
-            openingTimes: OpeningTimes(
-                day: 'Sat',
-                openingTime: 8,
-                openingTimeAM: true,
-                closingTime: 11,
-                closingTimeAM: false),
-          ),
-          SingleDayOpeningTimes(
-            openingTimes: OpeningTimes(
-                day: 'Sun',
-                openingTime: 8,
-                openingTimeAM: true,
-                closingTime: 9,
-                closingTimeAM: false),
+          Column(
+            children: List.generate(openingTimes.length, (index) {
+              return SingleDayOpeningTimes(openingTimes: openingTimes[index]);
+            }).toList(),
           ),
         ],
       ),
     );
   }
-}
-
-class OpeningTimes {
-  final String day;
-  final int openingTime;
-  final bool openingTimeAM;
-  final int closingTime;
-  final bool closingTimeAM;
-  OpeningTimes(
-      {this.day,
-      this.openingTime,
-      this.openingTimeAM,
-      this.closingTime,
-      this.closingTimeAM});
 }
 
 class SingleDayOpeningTimes extends StatelessWidget {

@@ -1,25 +1,10 @@
 import 'package:flutter/material.dart';
 
-class VenueOffer {
-  final String title;
-  final DateTime expires;
-
-  VenueOffer({this.title, this.expires});
-
-  String get remainingTime {
-    Duration timeDifference = expires.difference(DateTime.now());
-    //This can be imroved for sure
-    return '${timeDifference.inHours}hrs ${(timeDifference.inMinutes / 60).toStringAsFixed(0)}mins';
-  }
-}
+import '../venue_screen.dart';
 
 class VenueOffers extends StatelessWidget {
-  final List<VenueOffer> offers = [
-    VenueOffer(title: 'FREE ENTRY', expires: DateTime(2021, 01, 10, 18, 0)),
-    VenueOffer(title: 'FREE ENTRY', expires: DateTime(2021, 01, 10, 18, 0)),
-    VenueOffer(title: 'FREE ENTRY', expires: DateTime(2021, 01, 10, 18, 0)),
-    VenueOffer(title: 'FREE ENTRY', expires: DateTime(2021, 01, 10, 18, 0)),
-  ];
+  final List<VenueOffer> offers;
+  VenueOffers({this.offers});
   @override
   Widget build(BuildContext context) {
     return Column(

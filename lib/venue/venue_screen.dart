@@ -17,6 +17,7 @@ class VenueScreen extends StatelessWidget {
             children: [
               VenueHeader(
                 venueName: 'Venue Name 1',
+                tags: ['House', 'Chill', 'Live DJ'],
               ),
               SocialMediaRow(),
               VenueImagesCarousel(
@@ -34,12 +35,101 @@ class VenueScreen extends StatelessWidget {
                 addressZip: 'Zip Code',
                 distanceFromUser: 1.3,
               ),
-              VenueOffers(),
-              VenueHours(),
+              VenueOffers(
+                offers: [
+                  VenueOffer(
+                      title: 'FREE ENTRY',
+                      expires: DateTime(2021, 01, 10, 21, 0)),
+                  VenueOffer(
+                      title: '2 for 1', expires: DateTime(2021, 01, 10, 21, 0)),
+                  VenueOffer(
+                      title: 'FREE ENTRY',
+                      expires: DateTime(2021, 01, 10, 21, 0)),
+                  VenueOffer(
+                      title: 'FREE ENTRY',
+                      expires: DateTime(2021, 01, 10, 21, 0)),
+                ],
+              ),
+              VenueHours(
+                openingTimes: [
+                  OpeningTimes(
+                      day: 'Mon',
+                      openingTime: 8,
+                      openingTimeAM: true,
+                      closingTime: 9,
+                      closingTimeAM: false),
+                  OpeningTimes(
+                      day: 'Tue',
+                      openingTime: 8,
+                      openingTimeAM: true,
+                      closingTime: 9,
+                      closingTimeAM: false),
+                  OpeningTimes(
+                      day: 'Wed',
+                      openingTime: 8,
+                      openingTimeAM: true,
+                      closingTime: 9,
+                      closingTimeAM: false),
+                  OpeningTimes(
+                      day: 'Thurs',
+                      openingTime: 8,
+                      openingTimeAM: true,
+                      closingTime: 9,
+                      closingTimeAM: false),
+                  OpeningTimes(
+                      day: 'Fri',
+                      openingTime: 8,
+                      openingTimeAM: true,
+                      closingTime: 11,
+                      closingTimeAM: false),
+                  OpeningTimes(
+                      day: 'Sat',
+                      openingTime: 8,
+                      openingTimeAM: true,
+                      closingTime: 11,
+                      closingTimeAM: false),
+                  OpeningTimes(
+                      day: 'Sun',
+                      openingTime: 8,
+                      openingTimeAM: true,
+                      closingTime: 9,
+                      closingTimeAM: false),
+                ],
+              ),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+//Classes that I have created to hold the relevant data.
+//These classes would probably exist within an overall venue class
+//Feel free to create better classes if you see fit
+class VenueOffer {
+  final String title;
+  final DateTime expires;
+
+  VenueOffer({this.title, this.expires});
+
+  String get remainingTime {
+    Duration timeDifference = expires.difference(DateTime.now());
+    //This can be imroved for sure
+    return '${timeDifference.inHours}hrs ${(timeDifference.inMinutes / 60).toStringAsFixed(0)}mins';
+  }
+}
+
+class OpeningTimes {
+  final String day;
+  final int openingTime;
+  final bool openingTimeAM;
+  final int closingTime;
+  final bool closingTimeAM;
+  OpeningTimes(
+      {this.day,
+      this.openingTime,
+      this.openingTimeAM,
+      this.closingTime,
+      this.closingTimeAM});
 }
