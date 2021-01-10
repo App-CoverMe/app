@@ -10,8 +10,10 @@ class VenueImagesCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(vertical: 8.0),
       height: 100,
       child: ListView.builder(
+        padding: EdgeInsets.symmetric(horizontal: 8),
         scrollDirection: Axis.horizontal,
         physics: BouncingScrollPhysics(),
         itemCount: venueImages.length,

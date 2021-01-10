@@ -86,7 +86,7 @@ class App extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
             subtitle1: TextStyle(
-              fontFamily: 'Roboto',
+              fontFamily: 'Lato',
               fontSize: 14,
               fontWeight: FontWeight.w700,
             ),
