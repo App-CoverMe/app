@@ -1,5 +1,6 @@
 import 'package:app/venue/ui/social_media_row.dart';
 import 'package:app/venue/ui/venue_header.dart';
+import 'package:app/venue/ui/venue_images.dart';
 import 'package:flutter/material.dart';
 
 class VenueScreen extends StatelessWidget {
@@ -11,6 +12,7 @@ class VenueScreen extends StatelessWidget {
           children: [
             VenueHeader(),
             SocialMediaRow(),
+            VenueImagesCarousel(),
           ],
         ),
       ),
