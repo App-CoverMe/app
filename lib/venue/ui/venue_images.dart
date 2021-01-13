@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
 
 class VenueImagesCarousel extends StatelessWidget {
   final List<String> venueImages;
@@ -28,14 +29,40 @@ class VenueImage extends StatelessWidget {
   VenueImage({@required this.image});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 8.0),
-      child: Container(
-        height: 100,
-        width: 150,
-        decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
-            borderRadius: BorderRadius.circular(5)),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CmPhotoView(
+              image: image,
+            ),
+          ),
+        );
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(left: 8.0),
+        child: Container(
+          height: 100,
+          width: 150,
+          decoration: BoxDecoration(
+              image:
+                  DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
+              borderRadius: BorderRadius.circular(5)),
+        ),
+      ),
+    );
+  }
+}
+
+class CmPhotoView extends StatelessWidget {
+  final String image;
+  CmPhotoView({this.image});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: PhotoView(
+        imageProvider: AssetImage(image),
       ),
     );
   }

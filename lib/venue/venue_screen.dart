@@ -39,15 +39,15 @@ class VenueScreen extends StatelessWidget {
                 offers: [
                   VenueOffer(
                       title: 'FREE ENTRY',
-                      expires: DateTime(2021, 01, 10, 21, 0)),
+                      expires: DateTime(2021, 01, 16, 21, 0)),
                   VenueOffer(
-                      title: '2 for 1', expires: DateTime(2021, 01, 10, 21, 0)),
-                  VenueOffer(
-                      title: 'FREE ENTRY',
-                      expires: DateTime(2021, 01, 10, 21, 0)),
+                      title: '2 for 1', expires: DateTime(2021, 01, 16, 21, 0)),
                   VenueOffer(
                       title: 'FREE ENTRY',
-                      expires: DateTime(2021, 01, 10, 21, 0)),
+                      expires: DateTime(2021, 01, 16, 21, 0)),
+                  VenueOffer(
+                      title: 'FREE ENTRY',
+                      expires: DateTime(2021, 01, 16, 21, 0)),
                 ],
               ),
               VenueHours(
