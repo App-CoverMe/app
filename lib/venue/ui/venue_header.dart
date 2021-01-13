@@ -43,6 +43,7 @@ class VenueHeader extends StatelessWidget {
                   tags.length,
                   (index) => CmTag(
                     tagText: tags[index],
+                    tagColor: Colors.orange,
                   ),
                 ),
               ),
@@ -54,6 +55,7 @@ class VenueHeader extends StatelessWidget {
           right: 20,
           child: CmTag(
             tagText: 'Open now',
+            tagColor: Colors.green,
           ),
         ),
       ],
@@ -63,14 +65,16 @@ class VenueHeader extends StatelessWidget {
 
 class CmTag extends StatelessWidget {
   final String tagText;
-  CmTag({this.tagText});
+  final Color tagColor;
+  CmTag({@required this.tagText, @required this.tagColor});
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(4),
       padding: EdgeInsets.all(4),
       decoration: BoxDecoration(
-          color: Colors.grey, borderRadius: BorderRadius.circular(4)),
+          color: tagColor.withOpacity(0.8),
+          borderRadius: BorderRadius.circular(4)),
       child: Text(
         tagText,
         style:
