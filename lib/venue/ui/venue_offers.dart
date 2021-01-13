@@ -88,7 +88,7 @@ class CmOfferCardPainter extends CustomPainter {
     var circlePaint = Paint()
       ..color = Colors.blue
       ..style = PaintingStyle.fill
-      ..blendMode = BlendMode.dstOut;
+      ..blendMode = BlendMode.srcOver;
 
     // Define the paint for the rectangle
     final RRect rectangle =
@@ -100,13 +100,14 @@ class CmOfferCardPainter extends CustomPainter {
 
     // Draw the rectangle onto the canvas
     canvas.drawRRect(rectangle, rectPaint);
+    canvas.saveLayer(null, Paint()..blendMode = BlendMode.dstOut);
 
     // Draw the circle on the canvas
     canvas.drawCircle(Offset(0, middle), cutoutSize, circlePaint);
     canvas.drawCircle(Offset(size.width, middle), cutoutSize, circlePaint);
 
     // Save and restore the canvas to apply the blend mode
-    canvas.saveLayer(null, circlePaint);
+    // canvas.saveLayer(null, circlePaint);
     canvas.restore();
   }
 
