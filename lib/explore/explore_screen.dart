@@ -86,6 +86,10 @@ class ExploreScreen extends StatelessWidget {
               },
             ),
           ),
+          // Todo: Get the size of bottom nav bar and change size of SizedBox to match that
+          SizedBox(
+            height: 80,
+          ),
         ],
       ),
     );

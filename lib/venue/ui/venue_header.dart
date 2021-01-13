@@ -1,3 +1,4 @@
+import 'package:app/constants/ui_constants.dart';
 import 'package:flutter/material.dart';
 
 class VenueHeader extends StatelessWidget {
@@ -22,7 +23,7 @@ class VenueHeader extends StatelessWidget {
           },
           blendMode: BlendMode.dstIn,
           child: Container(
-            height: 220,
+            height: 250,
             decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage('assets/images/bar_image_1.jpg'),
@@ -51,11 +52,24 @@ class VenueHeader extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 20,
+          top: 50,
           right: 20,
           child: CmTag(
             tagText: 'Open now',
             tagColor: Colors.green,
+          ),
+        ),
+        Positioned(
+          top: 50,
+          left: 20,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
           ),
         ),
       ],

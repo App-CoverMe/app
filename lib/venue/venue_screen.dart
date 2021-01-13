@@ -5,12 +5,15 @@ import 'package:app/venue/ui/venue_hours.dart';
 import 'package:app/venue/ui/venue_images.dart';
 import 'package:app/venue/ui/venue_offers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class VenueScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.light,
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Column(
@@ -19,7 +22,7 @@ class VenueScreen extends StatelessWidget {
                 venueName: 'Venue Name 1',
                 tags: ['House', 'Chill', 'Live DJ'],
               ),
-              SocialMediaRow(),
+              VenueSocialMediaRow(),
               VenueImagesCarousel(
                 venueImages: [
                   'assets/images/bar_image_1.jpg',
