@@ -73,6 +73,9 @@ class VenueFeedItem extends StatelessWidget {
                           ? Icons.whatshot
                           : Icons.info_outline,
                       size: 20,
+                      color: venuePost.postType == PostType.Discount
+                          ? Colors.red
+                          : Colors.blue,
                     ),
                     SizedBox(
                       width: 4,
