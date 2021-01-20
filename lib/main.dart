@@ -71,6 +71,8 @@ class App extends StatelessWidget {
         title: 'CoverMe',
         theme: ThemeData(
           fontFamily: 'Lato',
+          textSelectionTheme:
+              TextSelectionThemeData(cursorColor: kPrimaryTextColor),
           primarySwatch: Colors.blue,
           iconTheme: IconThemeData(color: kPrimaryTextColor),
           textTheme: TextTheme(

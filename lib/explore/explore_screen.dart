@@ -17,6 +17,7 @@ class ExploreScreen extends StatelessWidget {
               print('View all pressed');
             },
             hasViewAll: false,
+            iconColor: Colors.red,
           ),
           Container(
             height: 200,
@@ -36,6 +37,7 @@ class ExploreScreen extends StatelessWidget {
               print('View all pressed');
             },
             hasViewAll: true,
+            iconColor: Colors.green,
           ),
           Container(
             height: 200,
@@ -55,6 +57,7 @@ class ExploreScreen extends StatelessWidget {
               print('View all pressed');
             },
             hasViewAll: true,
+            iconColor: Colors.blue,
           ),
           Container(
             height: 200,
@@ -74,6 +77,7 @@ class ExploreScreen extends StatelessWidget {
               print('View all pressed');
             },
             hasViewAll: true,
+            iconColor: Colors.purple,
           ),
           Container(
             height: 200,

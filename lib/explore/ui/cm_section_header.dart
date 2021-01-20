@@ -5,11 +5,13 @@ class CmSectionHeader extends StatelessWidget {
   final IconData headerIcon;
   final Function headerFunction;
   final bool hasViewAll;
+  final Color iconColor;
   CmSectionHeader(
       {@required this.headerTitle,
       @required this.headerIcon,
       @required this.headerFunction,
-      @required this.hasViewAll});
+      @required this.hasViewAll,
+      @required this.iconColor});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +24,13 @@ class CmSectionHeader extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(headerIcon),
+              Icon(
+                headerIcon,
+                color: iconColor,
+              ),
+              SizedBox(
+                width: 4,
+              ),
               Text(
                 headerTitle,
                 style: Theme.of(context).textTheme.headline5,
