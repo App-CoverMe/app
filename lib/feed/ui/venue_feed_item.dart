@@ -97,21 +97,26 @@ class VenueFeedItem extends StatelessWidget {
                 SizedBox(
                   height: 4,
                 ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.schedule,
-                      size: 16,
-                    ),
-                    SizedBox(
-                      width: 4,
-                    ),
-                    Text(
-                      '${venuePost.timeRemaining} left',
-                      style: textStyle.bodyText1
-                          .copyWith(fontWeight: FontWeight.w300),
-                    ),
-                  ],
+                Visibility(
+                  // Only deal posts have an expiary date
+                  visible:
+                      venuePost.postType == PostType.Discount ? true : false,
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.schedule,
+                        size: 16,
+                      ),
+                      SizedBox(
+                        width: 4,
+                      ),
+                      Text(
+                        '${venuePost.timeRemaining} left',
+                        style: textStyle.bodyText1
+                            .copyWith(fontWeight: FontWeight.w300),
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),
