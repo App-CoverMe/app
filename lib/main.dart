@@ -3,6 +3,7 @@ import 'package:app/authentication/data/authentication_repository.dart';
 import 'package:app/constants/ui_constants.dart';
 import 'package:app/home.dart';
 import 'package:app/login/bloc/login/login_bloc.dart';
+import 'package:app/login/create_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -75,6 +76,7 @@ class App extends StatelessWidget {
               TextSelectionThemeData(cursorColor: kPrimaryTextColor),
           primarySwatch: Colors.blue,
           iconTheme: IconThemeData(color: kPrimaryTextColor),
+          brightness: Brightness.light,
           textTheme: TextTheme(
             headline5: TextStyle(
               fontFamily: 'Lato',
@@ -117,6 +119,7 @@ class App extends StatelessWidget {
         routes: {
           '/': (context) => Home(),
           '/login': (context) => LoginScreen(),
+          '/createProfile': (context) => CreateProfileScreen(),
         },
       ),
     );

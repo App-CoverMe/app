@@ -1,4 +1,5 @@
 import 'package:app/authentication/bloc/authentication_bloc.dart';
+import 'package:app/cm_drawer.dart';
 import 'package:app/shared/widgets/search_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -50,8 +51,11 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      drawer: Drawer(),
-      body: _currentTabIndex == 0 ? ExploreScreen() : FeedScreen(),
+      drawer: CmDrawer(),
+      body: SafeArea(
+        bottom: false,
+        child: _currentTabIndex == 0 ? ExploreScreen() : FeedScreen(),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentTabIndex,
         items: [
