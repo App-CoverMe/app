@@ -4,6 +4,7 @@ import 'package:app/constants/ui_constants.dart';
 import 'package:app/home.dart';
 import 'package:app/login/bloc/login/login_bloc.dart';
 import 'package:app/login/create_profile_screen.dart';
+import 'package:app/make_post/make_post_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -120,6 +121,7 @@ class App extends StatelessWidget {
           '/': (context) => Home(),
           '/login': (context) => LoginScreen(),
           '/createProfile': (context) => CreateProfileScreen(),
+          '/makePost': (context) => MakePostScreen(),
         },
       ),
     );

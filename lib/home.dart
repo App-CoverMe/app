@@ -16,11 +16,24 @@ class _HomeState extends State<Home> {
   int _currentTabIndex = 0;
   GlobalKey<ScaffoldState> _rootScaffold = GlobalKey<ScaffoldState>();
 
+  bool _loggedIn = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true, //Needed to have the app bar be transparent
       key: _rootScaffold,
+      floatingActionButton: _loggedIn
+          ? FloatingActionButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/makePost');
+              },
+              child: Icon(Icons.add),
+              backgroundColor: Colors.grey,
+              elevation: 0,
+            )
+          : null,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () => _rootScaffold.currentState.openDrawer(),
