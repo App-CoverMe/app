@@ -61,7 +61,7 @@ class _MakePostScreenState extends State<MakePostScreen> {
                       width: 4.0,
                     ),
                     Text(
-                      'Offer',
+                      'Alert',
                       style: textTheme.headline6.copyWith(color: Colors.red),
                     ),
                   ],
